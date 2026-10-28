@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#80164c">
+  <title>Happy Birthday Radha ❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: Georgia, serif;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(135deg, #25051e, #80164c, #e84c79);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      animation: float 7s linear forwards;
+      color: #ffb6d5;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      to { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 430px;
+      margin: 25px auto;
+      padding: 32px 22px;
+      border: 1px solid #ffffff55;
+      border-radius: 28px;
+      background: #ffffff12;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 15px 50px #14001066;
+    }
+
+    h1 {
+      font-size: clamp(32px, 9vw, 45px);
+      margin: 8px 0;
+      color: #ffd4e5;
+    }
+
+    .subtitle {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      color: #ffe6ef;
+    }
+
+    .gift {
+      font-size: 90px;
+      cursor: pointer;
+      display: inline-block;
+      animation: bounce 1.5s infinite;
+      filter: drop-shadow(0 8px 15px #ff70aa66);
+    }
+
+    @keyframes bounce {
+      50% { transform: translateY(-12px) rotate(4deg); }
+    }
+
+    button {
+      border: 0;
+      border-radius: 30px;
+      padding: 14px 25px;
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      background: #ffe0eb;
+      color: #8c164b;
+      cursor: pointer;
+      box-shadow: 0 5px 20px #17001544;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px #17001555;
+    }
+
+    button:active { transform: scale(.96); }
+
+    #surprise {
+      display: none;
+      animation: appear 1s ease;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message {
+      font-family: Arial, sans-serif;
+      line-height: 1.9;
+      color: #fff0f6;
+    }
+
+    .big { font-size: 55px; margin: 12px; }
+
+    footer {
+      font: 12px Arial, sans-serif;
+      color: #ffd4e5;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div style="font-size:28px">💖 ✨ 💖</div>
+    <p class="subtitle">A little surprise, made with love...</p>
+    <h1>Happy Birthday<br>Radha ❤️</h1>
+
+    <div id="intro">
+      <p class="subtitle">Someone special has a surprise for you! 🥹</p>
+      <div class="gift" onclick="openGift()">🎁</div>
+      <p class="subtitle">Tap your gift, birthday girl 💝</p>
+      <button onclick="openGift()">Open Your Surprise 💌</button>
+    </div>
+
+    <div id="surprise">
+      <div class="big">🎂💗🌹</div>
+      <h2>To My Beautiful Girl ❤️</h2>
+
+      <div class="message">
+        Happy Birthday, meri jaan! 🥹❤️<br><br>
+        Tum meri life ki sabse special person ho.
+        Tumhari smile meri favourite hai, aur tumhari
+        khushi mere liye bahut important hai. 💕<br><br>
+        Meri wish hai ki tumhari life hamesha happiness,
+        love aur beautiful moments se bhari rahe.
+        Tumhare saare dreams poore hon aur tum hamesha
+        aise hi smile karti raho. 🫶🏻🌸<br><br>
+        Thank you meri life mein hone ke liye.
+        You deserve all the love in this world. 💖<br><br>
+        <strong>I love you so much, Radha! ❤️😘</strong><br>
+        Once again, Happy Birthday, my princess! 👑
+      </div>
+
+      <div class="big">💋❤️🧸</div>
+      <p class="subtitle">
+        Baby... do you really think this is the end? 🥹
+      </p>
+      <button onclick="moreLove()">
+        One More Surprise 🥹💌
+      </button>
+    </div>
+
+    <footer>Made with ❤️ just for Radha</footer>
+  </div>
+
+  <script>
+    function openGift() {
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("surprise").style.display = "block";
+
+      for (let i = 0; i < 35; i++) {
+        setTimeout(() => {
+          const h = document.createElement("div");
+          h.className = "heart";
+          h.textContent = ["❤️", "💕", "💖", "✨", "🌸"][
+            Math.floor(Math.random() * 5)
+          ];
+          h.style.left = Math.random() * 100 + "vw";
+          h.style.fontSize = (18 + Math.random() * 22) + "px";
+          h.style.animationDuration = (4 + Math.random() * 5) + "s";
+          document.body.appendChild(h);
+          setTimeout(() => h.remove(), 9000);
+        }, i * 90);
+      }
+    }
+
+    function moreLove() {
+      window.location.href = "surprise.html";
+    }
+  </script>
+</body>
+</html>
